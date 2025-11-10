@@ -104,6 +104,7 @@ export interface AnalyticsData {
     likes: number
     comments: number
     shares: number
+    saves: number
   }[]
   optimalPostingTimes: { hour: string; engagement: number }[]
   topTags: {

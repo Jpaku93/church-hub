@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts'
 import { AnalyticsData } from '../../../types'
-import { TrendingUp, Users, Eye, Heart } from 'lucide-react'
+import { TrendingUp, Users, Heart } from 'lucide-react'
 
 const analyticsData: AnalyticsData = {
   // Engagement Metrics
@@ -251,7 +251,7 @@ export function SocialMediaAnalytics() {
                     fill="#8884d8"
                     dataKey="count"
                   >
-                    {analyticsData.contentMix.map((entry, index) => (
+                    {analyticsData.contentMix.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
