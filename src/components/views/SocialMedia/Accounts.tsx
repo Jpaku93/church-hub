@@ -27,10 +27,10 @@ export function SocialMediaAccounts() {
   const { isMember } = useAuth()
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       <div>
-        <h3 className="text-2xl font-semibold">Connected Accounts</h3>
-        <p className="text-muted-foreground">Manage your social media account connections</p>
+        <h3 className="text-xl lg:text-2xl font-semibold">Connected Accounts</h3>
+        <p className="text-sm lg:text-base text-muted-foreground">Manage your social media account connections</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

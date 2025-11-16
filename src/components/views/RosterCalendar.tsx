@@ -91,14 +91,14 @@ export function RosterCalendar() {
   const selectedEvent = selectedDay ? getEventForDay(selectedDay) : null
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div>
-          <h2 className="text-3xl font-bold">January 2024</h2>
-          <p className="text-muted-foreground">Roster & Calendar</p>
+          <h2 className="text-2xl lg:text-3xl font-bold">January 2024</h2>
+          <p className="text-sm lg:text-base text-muted-foreground">Roster & Calendar</p>
         </div>
         {!isMember && (
-          <Button>
+          <Button size="sm" className="w-full sm:w-auto">
             <Plus className="h-4 w-4 mr-2" />
             Add Event
           </Button>
@@ -112,14 +112,14 @@ export function RosterCalendar() {
             <CardDescription>Monthly view of events and duties</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-7 gap-2 mb-4">
+            <div className="grid grid-cols-7 gap-1 lg:gap-2 mb-2 lg:mb-4">
               {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-                <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">
+                <div key={day} className="text-center text-xs lg:text-sm font-medium text-muted-foreground py-1 lg:py-2">
                   {day}
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-1 lg:gap-2">
               {calendarDays.map((day) => {
                 const event = getEventForDay(day)
                 const isSelected = selectedDay === day
@@ -127,14 +127,14 @@ export function RosterCalendar() {
                   <div
                     key={day}
                     onClick={() => handleDayClick(day)}
-                    className={`aspect-square border rounded-md p-2 text-sm hover:bg-accent cursor-pointer transition-colors ${
+                    className={`aspect-square border rounded-md p-1 lg:p-2 text-xs lg:text-sm hover:bg-accent cursor-pointer transition-colors ${
                       isSelected ? 'ring-2 ring-primary bg-primary/10' : ''
                     } ${event ? '' : 'opacity-50'}`}
                   >
-                    <div className="font-medium mb-1">{day}</div>
+                    <div className="font-medium mb-0.5 lg:mb-1">{day}</div>
                     {event && (
                       <div
-                        className="text-xs p-1 rounded truncate"
+                        className="text-[10px] lg:text-xs p-0.5 lg:p-1 rounded truncate"
                         style={{
                           backgroundColor: getMinistryColor(event.ministry) + '20',
                           color: getMinistryColor(event.ministry),
@@ -191,21 +191,21 @@ export function RosterCalendar() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
+            <div className="overflow-x-auto -mx-4 sm:mx-0">
+              <table className="w-full min-w-[500px]">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-3 px-4 font-medium">Time</th>
-                    <th className="text-left py-3 px-4 font-medium">Activity</th>
-                    <th className="text-left py-3 px-4 font-medium">Responsible</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Time</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Activity</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Responsible</th>
                   </tr>
                 </thead>
                 <tbody>
                   {selectedTimetable.map((entry) => (
                     <tr key={entry.id} className="border-b hover:bg-accent/50">
-                      <td className="py-3 px-4 font-mono text-sm">{entry.time}</td>
-                      <td className="py-3 px-4">{entry.activity}</td>
-                      <td className="py-3 px-4 text-muted-foreground">{entry.responsible}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 font-mono text-xs lg:text-sm">{entry.time}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{entry.activity}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm text-muted-foreground">{entry.responsible}</td>
                     </tr>
                   ))}
                 </tbody>

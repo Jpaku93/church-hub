@@ -89,10 +89,10 @@ const COLORS = ['#3b82f6', '#10b981', '#f59e0b']
 
 export function SocialMediaAnalytics() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       <div>
-        <h3 className="text-3xl font-bold">Analytics Dashboard</h3>
-        <p className="text-muted-foreground">Social media performance overview</p>
+        <h3 className="text-2xl lg:text-3xl font-bold">Analytics Dashboard</h3>
+        <p className="text-sm lg:text-base text-muted-foreground">Social media performance overview</p>
       </div>
 
       {/* Key Metrics */}
@@ -145,7 +145,7 @@ export function SocialMediaAnalytics() {
 
       {/* Engagement Metrics */}
       <div className="space-y-4">
-        <h4 className="text-xl font-semibold">Engagement Metrics</h4>
+        <h4 className="text-lg lg:text-xl font-semibold">Engagement Metrics</h4>
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
@@ -153,15 +153,17 @@ export function SocialMediaAnalytics() {
               <CardDescription>Weekly engagement rate over time</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <LineChart data={analyticsData.engagementTrend}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="rate" stroke="#3b82f6" strokeWidth={2} name="Engagement Rate (%)" />
-                </LineChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={analyticsData.engagementTrend}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="rate" stroke="#3b82f6" strokeWidth={2} name="Engagement Rate (%)" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
 
@@ -171,15 +173,17 @@ export function SocialMediaAnalytics() {
               <CardDescription>Average engagement rate by platform</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <BarChart data={analyticsData.engagementByPlatform}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="platform" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="rate" fill="#10b981" name="Engagement Rate (%)" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={analyticsData.engagementByPlatform}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="platform" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="rate" fill="#10b981" name="Engagement Rate (%)" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -187,7 +191,7 @@ export function SocialMediaAnalytics() {
 
       {/* Reach and Awareness */}
       <div className="space-y-4">
-        <h4 className="text-xl font-semibold">Reach and Awareness</h4>
+        <h4 className="text-lg lg:text-xl font-semibold">Reach and Awareness</h4>
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
@@ -195,17 +199,19 @@ export function SocialMediaAnalytics() {
               <CardDescription>Reach across different platforms</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <BarChart data={analyticsData.reachByPlatform}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="platform" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="reach" fill="#3b82f6" name="Reach" />
-                  <Bar dataKey="impressions" fill="#8b5cf6" name="Impressions" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={analyticsData.reachByPlatform}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="platform" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="reach" fill="#3b82f6" name="Reach" />
+                    <Bar dataKey="impressions" fill="#8b5cf6" name="Impressions" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
 
@@ -215,15 +221,17 @@ export function SocialMediaAnalytics() {
               <CardDescription>Weekly follower count</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <LineChart data={analyticsData.followerGrowth}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="followers" stroke="#8b5cf6" strokeWidth={2} name="Followers" />
-                </LineChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={analyticsData.followerGrowth}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="followers" stroke="#8b5cf6" strokeWidth={2} name="Followers" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -231,7 +239,7 @@ export function SocialMediaAnalytics() {
 
       {/* Content Performance */}
       <div className="space-y-4">
-        <h4 className="text-xl font-semibold">Content Performance</h4>
+        <h4 className="text-lg lg:text-xl font-semibold">Content Performance</h4>
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
@@ -239,25 +247,27 @@ export function SocialMediaAnalytics() {
               <CardDescription>Distribution by post type</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                  <Pie
-                    data={analyticsData.contentMix}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ type, percent }) => `${type} ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="count"
-                  >
-                    {analyticsData.contentMix.map((_, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={analyticsData.contentMix}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ type, percent }) => `${type} ${(percent * 100).toFixed(0)}%`}
+                      outerRadius={80}
+                      fill="#8884d8"
+                      dataKey="count"
+                    >
+                      {analyticsData.contentMix.map((_, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
 
@@ -267,15 +277,17 @@ export function SocialMediaAnalytics() {
               <CardDescription>Average engagement by hour</CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <BarChart data={analyticsData.optimalPostingTimes}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="hour" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="engagement" fill="#f59e0b" name="Engagement" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div className="h-[200px] lg:h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={analyticsData.optimalPostingTimes}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="hour" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="engagement" fill="#f59e0b" name="Engagement" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -287,25 +299,25 @@ export function SocialMediaAnalytics() {
             <CardDescription>Best performing hashtags by engagement and reach</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
+            <div className="overflow-x-auto -mx-4 sm:mx-0">
+              <table className="w-full min-w-[600px]">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-3 px-4 font-medium">Tag</th>
-                    <th className="text-left py-3 px-4 font-medium">Usage</th>
-                    <th className="text-left py-3 px-4 font-medium">Reach</th>
-                    <th className="text-left py-3 px-4 font-medium">Engagement</th>
-                    <th className="text-left py-3 px-4 font-medium">Eng. Rate</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Tag</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Usage</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Reach</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Engagement</th>
+                    <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Eng. Rate</th>
                   </tr>
                 </thead>
                 <tbody>
                   {analyticsData.topTags.map((tag, index) => (
                     <tr key={index} className="border-b hover:bg-accent/50">
-                      <td className="py-3 px-4 font-medium text-blue-600">{tag.tag}</td>
-                      <td className="py-3 px-4">{tag.usage}</td>
-                      <td className="py-3 px-4">{tag.reach.toLocaleString()}</td>
-                      <td className="py-3 px-4">{tag.engagement.toLocaleString()}</td>
-                      <td className="py-3 px-4 font-semibold">{tag.engagementRate}%</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium text-blue-600">{tag.tag}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{tag.usage}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{tag.reach.toLocaleString()}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{tag.engagement.toLocaleString()}</td>
+                      <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-semibold">{tag.engagementRate}%</td>
                     </tr>
                   ))}
                 </tbody>
@@ -322,25 +334,25 @@ export function SocialMediaAnalytics() {
           <CardDescription>Best performing content by engagement</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
+            <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left py-3 px-4 font-medium">Title</th>
-                  <th className="text-left py-3 px-4 font-medium">Platform</th>
-                  <th className="text-left py-3 px-4 font-medium">Reach</th>
-                  <th className="text-left py-3 px-4 font-medium">Engagement</th>
-                  <th className="text-left py-3 px-4 font-medium">Eng. Rate</th>
+                  <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Title</th>
+                  <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Platform</th>
+                  <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Reach</th>
+                  <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Engagement</th>
+                  <th className="text-left py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">Eng. Rate</th>
                 </tr>
               </thead>
               <tbody>
                 {analyticsData.topPosts.map((post, index) => (
                   <tr key={index} className="border-b hover:bg-accent/50">
-                    <td className="py-3 px-4 font-medium">{post.title}</td>
-                    <td className="py-3 px-4">{post.platform}</td>
-                    <td className="py-3 px-4">{post.reach.toLocaleString()}</td>
-                    <td className="py-3 px-4">{post.engagement.toLocaleString()}</td>
-                    <td className="py-3 px-4 font-semibold">{post.engagementRate}%</td>
+                    <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-medium">{post.title}</td>
+                    <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{post.platform}</td>
+                    <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{post.reach.toLocaleString()}</td>
+                    <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm">{post.engagement.toLocaleString()}</td>
+                    <td className="py-2 lg:py-3 px-2 lg:px-4 text-xs lg:text-sm font-semibold">{post.engagementRate}%</td>
                   </tr>
                 ))}
               </tbody>

@@ -57,15 +57,15 @@ export function Notifications() {
   const unreadCount = notifications.filter((n) => !n.read).length
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div>
-          <h2 className="text-3xl font-bold">Notifications</h2>
-          <p className="text-muted-foreground">Stay updated with reminders and updates</p>
+          <h2 className="text-2xl lg:text-3xl font-bold">Notifications</h2>
+          <p className="text-sm lg:text-base text-muted-foreground">Stay updated with reminders and updates</p>
         </div>
         {unreadCount > 0 && (
-          <Badge variant="default">
-            <Bell className="h-4 w-4 mr-1" />
+          <Badge variant="default" className="text-xs lg:text-sm">
+            <Bell className="h-3 w-3 lg:h-4 lg:w-4 mr-1" />
             {unreadCount} unread
           </Badge>
         )}

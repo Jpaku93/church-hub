@@ -56,14 +56,14 @@ export function SocialMediaPlanner() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-2xl font-semibold">Content Planner</h3>
-          <p className="text-muted-foreground">Schedule and manage your social media posts</p>
+          <h3 className="text-xl lg:text-2xl font-semibold">Content Planner</h3>
+          <p className="text-sm lg:text-base text-muted-foreground">Schedule and manage your social media posts</p>
         </div>
         {!isMember && (
-          <Button onClick={() => setIsDialogOpen(true)}>
+          <Button size="sm" className="w-full sm:w-auto" onClick={() => setIsDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
             Schedule Post
           </Button>

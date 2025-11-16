@@ -61,10 +61,10 @@ export function Documents() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       <div>
-        <h2 className="text-3xl font-bold">Documents</h2>
-        <p className="text-muted-foreground">Manage and review church documents</p>
+        <h2 className="text-2xl lg:text-3xl font-bold">Documents</h2>
+        <p className="text-sm lg:text-base text-muted-foreground">Manage and review church documents</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

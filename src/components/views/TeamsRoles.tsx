@@ -18,10 +18,10 @@ export function TeamsRoles() {
   const { isMember } = useAuth()
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       <div>
-        <h2 className="text-3xl font-bold">Teams & Roles</h2>
-        <p className="text-muted-foreground">Manage ministries and team members</p>
+        <h2 className="text-2xl lg:text-3xl font-bold">Teams & Roles</h2>
+        <p className="text-sm lg:text-base text-muted-foreground">Manage ministries and team members</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

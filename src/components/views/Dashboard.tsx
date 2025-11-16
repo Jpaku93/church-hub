@@ -27,7 +27,7 @@ export function Dashboard() {
   const { isMember } = useAuth()
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -157,22 +157,22 @@ export function Dashboard() {
           <CardDescription>Navigate to main sections</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Button variant="outline" className="flex flex-col h-auto py-4">
-              <Calendar className="h-6 w-6 mb-2" />
-              Calendar
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+            <Button variant="outline" className="flex flex-col h-auto py-3 lg:py-4">
+              <Calendar className="h-5 w-5 lg:h-6 lg:w-6 mb-1 lg:mb-2" />
+              <span className="text-xs lg:text-sm">Calendar</span>
             </Button>
-            <Button variant="outline" className="flex flex-col h-auto py-4">
-              <Clock className="h-6 w-6 mb-2" />
-              Timetable
+            <Button variant="outline" className="flex flex-col h-auto py-3 lg:py-4">
+              <Clock className="h-5 w-5 lg:h-6 lg:w-6 mb-1 lg:mb-2" />
+              <span className="text-xs lg:text-sm">Timetable</span>
             </Button>
-            <Button variant="outline" className="flex flex-col h-auto py-4">
-              <FileText className="h-6 w-6 mb-2" />
-              Documents
+            <Button variant="outline" className="flex flex-col h-auto py-3 lg:py-4">
+              <FileText className="h-5 w-5 lg:h-6 lg:w-6 mb-1 lg:mb-2" />
+              <span className="text-xs lg:text-sm">Documents</span>
             </Button>
-            <Button variant="outline" className="flex flex-col h-auto py-4">
-              <Share2 className="h-6 w-6 mb-2" />
-              Social Media
+            <Button variant="outline" className="flex flex-col h-auto py-3 lg:py-4">
+              <Share2 className="h-5 w-5 lg:h-6 lg:w-6 mb-1 lg:mb-2" />
+              <span className="text-xs lg:text-sm">Social Media</span>
             </Button>
           </div>
         </CardContent>
